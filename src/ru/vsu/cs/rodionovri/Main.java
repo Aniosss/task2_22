@@ -3,6 +3,14 @@ package ru.vsu.cs.rodionovri;
 import java.util.*;
 
 public class Main {
+    public static void main(String[] args) {
+        int[] firstBox = new int[3];
+        int[] secondBox = new int[3];
+        inputSizeOfBox(firstBox);
+        inputSizeOfBox(secondBox);
+        outputResult(compareTwoBoxes(firstBox, secondBox));
+    }
+
     public static void inputSizeOfBox(int array[]) {
         Scanner scanner = new Scanner(System.in);
 
@@ -11,8 +19,8 @@ public class Main {
         }
     }
 
-    public static void output(int var) {
-        switch (var) {
+    public static void outputResult(int option) {
+        switch (option) {
             case 0:
                 System.out.println("equals");
                 break;
@@ -38,14 +46,5 @@ public class Main {
         } else if (firstBox[0] <= secondBox[0] && firstBox[1] <= secondBox[1] && firstBox[2] <= secondBox[2]) {
             return 2;
         } else return 3;
-    }
-
-
-    public static void main(String[] args) {
-        int firstBox[] = new int[3];
-        int secondBox[] = new int[3];
-        inputSizeOfBox(firstBox);
-        inputSizeOfBox(secondBox);
-        output(compareTwoBoxes(firstBox, secondBox));
     }
 }
